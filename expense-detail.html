@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"  class="gn-noscroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>费用明细</title>
+    <link rel="stylesheet" href="css/main.built.css">
+    <script src="javascript/jquery-2.1.1.min.js"></script>
+    <script src="javascript/jquery.touchSwipe.min.js"></script>
+    <script src="javascript/expense-detail.js"></script>
+    <script>
+        !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);r.documentElement.style.fontSize=a/2*n+"px"},e.exports=t["default"]}]);  flex(100, 1);
+    </script>
+</head>
+<body>
+<div class="gc-container">
+    <div class="expense-dt-box dark-brown">
+        <div class="top-header">
+            <div class="t-part-left">
+                <span class="back-box"><a href="payment.html"></a></span>
+            </div>
+
+        </div>
+
+        <div id="exp_dt_wrapper" class="exp-dt m-scroll-wrap">
+            <main>
+                <ul class="exp-nav-list dark-brown">
+                    <li><span>小费</span></li>
+                    <li class="active"><span>单品折扣</span></li>
+                    <li><span>整体折扣</span></li>
+                </ul>
+                <dl class="exp-switch-view">
+                    <dd class="view-box tip-box next-view">
+                        <ul class="exp-items-list">
+                            <li class="exp-item active">
+                                <span>小费1</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>小费2</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>小费3</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>小费4</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item">
+                                <span>小费5</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dd class="view-box dis-item-box current-view">
+                        <ul class="exp-items-list">
+                            <input type="checkbox" id="exp_item_1" checked>
+                            <li class="exp-item active">
+                                <label  for="exp_item_1" >
+                                    <span>单品折扣1</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+
+                            </li>
+                            <input type="checkbox" id="exp_item_2">
+                            <li class="exp-item ">
+                                <label  for="exp_item_2" >
+                                    <span>单品折扣2</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                            <input type="checkbox" id="exp_item_3">
+                            <li class="exp-item ">
+                                <label  for="exp_item_3" >
+                                    <span>单品折扣3</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                            <input type="checkbox" id="exp_item_4">
+                            <li class="exp-item ">
+                                <label  for="exp_item_4" >
+                                    <span>单品折扣4</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                            <input type="checkbox" id="exp_item_5">
+                            <li class="exp-item">
+                                <label  for="exp_item_5" >
+                                    <span>单品折扣5</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                            <input type="checkbox" id="exp_item_6">
+                            <li class="exp-item ">
+                                <label  for="exp_item_6" >
+                                    <span>单品折扣6</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                            <input type="checkbox" id="exp_item_7">
+                            <li class="exp-item ">
+                                <label  for="exp_item_7" >
+                                    <span>单品折扣7</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dd class="view-box dis-whole-box next-view">
+                        <ul class="exp-items-list">
+                            <li class="exp-item active">
+                                <span>整体折扣1</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>整体折扣2</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>整体折扣3</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>整体折扣4</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item">
+                                <span>整体折扣5</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+
+            </main>
+        </div>
+        <div class="btm-fixed carbon-black">
+            <footer class="btn-submit">
+                确认
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

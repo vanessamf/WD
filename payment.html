@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.built.css">
+    <script src="javascript/jquery-2.1.1.min.js"></script>
+    <script src="javascript/jquery.touchSwipe.min.js"></script>
+    <script src="javascript/payment.js"></script>
+    <script src="javascript/expense-detail.js"></script>
+    <script>
+        !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);r.documentElement.style.fontSize=a/2*n+"px"},e.exports=t["default"]}]);  flex(100, 1);
+    </script>
+</head>
+<body>
+<div class="gc-container">
+    <div class="pm-box priority">
+        <div class="top-header">
+            <div class="t-part-left">
+                <span class="back-box"><a href="ordering.html"></a></span>
+                <span class="pm-num">Check04002</span>
+            </div>
+            <ul class="t-part-right">
+                <li>
+                    <div class="sel-tab-box">
+                        <span class="icon-tab"></span>
+                        <span class="tab-num">A3</span>
+                    </div>
+                    <div class="num-diners-box">
+                        <span class="icon-num"></span>
+                        <span class="num-diners">4</span>
+                    </div>
+                    <div class="print-box"></div>
+                </li>
+            </ul>
+        </div>
+        <div id="pm_wrapper" class="pm m-scroll-wrap">
+            <main>
+                <div class="sel-food-container">
+                    <dl>
+                        <dd class="sel-f-item">
+                            <div class="lay-delete"></div>
+                            <div class="lay-cover">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-1">堂</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="sw-quantity">
+                                        2
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd class="sel-f-item">
+                            <div class="lay-delete"></div>
+                            <div class="lay-cover">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-2">打</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="sw-quantity">
+                                        10
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd class="sel-f-item">
+                            <div class="lay-delete"></div>
+                           <div class="lay-cover">
+                               <div class="switch-flag">
+                                   <span class="f-item flag-3">外</span>
+                               </div>
+                               <div class="food-item item-detail">
+                                   <div class="f-name-box">
+                                       <span class="f-name">牛肉汉堡包</span>
+                                       <span class="mark-cdm"></span>
+                                   </div>
+                                   <div class="f-price">￥33.00</div>
+                                   <div class="sw-quantity">
+                                       1
+                                   </div>
+                               </div>
+                           </div>
+                        </dd>
+                        <dd class="sel-f-item">
+                            <div class="lay-delete"></div>
+                            <div class="lay-cover">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-4">损</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="sw-quantity">
+                                        2
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd class="sel-f-item">
+                            <div class="lay-delete"></div>
+                            <div class="lay-cover">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-5">员</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="sw-quantity">
+                                        10
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd class="sel-f-item">
+                            <div class="lay-delete"></div>
+                            <div class="lay-cover">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-6">促</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="sw-quantity">
+                                        1
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd class="sel-last-item">
+                            <div class="del-box">
+                                <div class="lay-delete"></div>
+                                <div class="lay-cover">
+                                    <div class="sel-last-tip-fl">小费</div>
+                                    <div class="sel-last-tip-fr">$8.00</div>
+                                </div>
+                            </div>
+                            <div class="del-box">
+                                <div class="lay-delete"></div>
+                                <div class="lay-cover">
+                                    <div class="sel-last-tip-fl">小费</div>
+                                    <div class="sel-last-tip-fr">$11.00</div>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div>
+                </div>
+                <div class="item-color total-p-box">
+                    <div>总价</div>
+                    <div class="pm-item-right total-price">￥199.00</div>
+                </div>
+                <div class="item-color service-c-box">
+                    <div>服务费</div>
+                    <div class="pm-item-right total-price">￥19.00</div>
+                </div>
+                <div class="item-color tax-box">
+                    <div>税</div>
+                    <div class="pm-item-right total-price">￥4.00</div>
+                </div>
+                <div class="item-color tip-box">
+                    <div>小费</div>
+                    <div class="pm-item-right total-price">￥10.00</div>
+                    <div class="more-arrow"></div>
+                </div>
+                <div class="discount-box">
+                    <div class="dis-list">
+                        <span class="item-color item-dis">
+                            <span class="discount-txt">折扣</span>
+                            <span>单品折扣</span>
+                            <span class="pm-item-right">￥0.00</span>
+                            <span class="more-arrow"></span>
+                        </span>
+                        <span class="item-color whole-dis">
+                            <span>整体折扣</span>
+                            <span class="pm-item-right">￥0.00</span>
+                            <span class="more-arrow"></span>
+                        </span>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div class="btm-fixed carbon-black">
+            <footer>
+                <div class="pm-ft-item item-top">
+                    <div class="num-usr">会员:
+                        <span>1323130</span>
+                    </div>
+                    <div class="total-price">
+                        总价
+                        <span>￥321.00</span>
+                    </div>
+                </div>
+                <div class="pm-ft-item btn-list item-btm">
+                    <div class=" item-btn pm-alipay dark-brown">支付宝</div>
+					<div class=" item-btn pm-weChat dark-brown">微信</div>
+                    <div class=" item-btn pm-cash dark-brown">现金</div>
+                    <div class="item-btn pm-other b-color">更多</div>
+                </div>
+            </footer>
+        </div>
+        <div class="pop-bg"></div>
+        <div class="sweet-del-alert base-alert">
+            <span class="sweet-del">删除</span>
+            <span class="sweet-cancel">取消</span>
+        </div>
+        <div class="pm-cash-box base-alert">
+            <div class="header-title">
+                <div class="pm-a-part-left">
+                    <div class="alert-icon"></div>
+                    <div class="alert-title">收取金额</div>
+                </div>
+                <div class="pm-a-part-right close"></div>
+            </div>
+            <div class="main-content">
+                <div class="modify-cash">
+                    <div class="mdf-c-label" contenteditable="true"></div>
+                </div>
+                <ul class="cash-list">
+                    <li class="cash-item ">
+                        <span>20</span>
+                    </li>
+                    <li class="cash-item ">30</li>
+                    <li class="cash-item ">50</li>
+                    <li class="cash-item ">100</li>
+                    <li class="cash-item ">150</li>
+                    <li class="cash-item ">200</li>
+                </ul>
+            </div>
+            <div class="ft-bottom carbon-black">
+                <div class="a-btn-confirm">确定</div>
+            </div>
+        </div>
+    </div>
+    <div class="sel-pm-box">
+        <div class="top-header">
+            <div class="t-part-left">
+                <span class="back-box"></span>
+            </div>
+        </div>
+        <div id="sel_pm_wrapper" class="sel-pm m-scroll-wrap">
+            <main>
+                <div class="item-pm-mtd active">
+                    <span>支付宝</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>微信</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>现金</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>信用卡</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>蚂蚁花呗</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>付款方式1</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>付款方式2</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>付款方式3</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>付款方式4</span>
+                    <span class="icon-chk"></span>
+                </div>
+            </main>
+        </div>
+        <div class="btm-fixed carbon-black">
+            <footer class="btn-submit">
+                确认
+            </footer>
+        </div>
+    </div>
+    <!--折扣-->
+    <div class="expense-dt-box dark-brown">
+        <div class="top-header">
+            <div class="t-part-left">
+                <span class="back-box"></span>
+            </div>
+
+        </div>
+        <div id="exp_dt_wrapper" class="exp-dt m-scroll-wrap">
+            <main>
+                <ul class="exp-nav-list dark-brown">
+                    <li><span>小费</span></li>
+                    <li class="active"><span>单品折扣</span></li>
+                    <li><span>整体折扣</span></li>
+                </ul>
+                <dl class="exp-switch-view">
+                    <dd class="view-box tip-box next-view">
+                        <ul class="exp-items-list">
+                            <li class="exp-item active">
+                                <span>小费1</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>小费2</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>小费3</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>小费4</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item">
+                                <span>小费5</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dd class="view-box dis-item-box current-view">
+                        <ul class="exp-items-list">
+                            <input type="checkbox" id="exp_item_1" checked>
+                            <li class="exp-item active">
+                                <label for="exp_item_1">
+                                    <span>单品折扣1</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+
+                            </li>
+                            <input type="checkbox" id="exp_item_2">
+                            <li class="exp-item ">
+                                <label for="exp_item_2">
+                                    <span>单品折扣2</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                            <input type="checkbox" id="exp_item_3">
+                            <li class="exp-item ">
+                                <label for="exp_item_3">
+                                    <span>单品折扣3</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                            <input type="checkbox" id="exp_item_4">
+                            <li class="exp-item ">
+                                <label for="exp_item_4">
+                                    <span>单品折扣4</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                            <input type="checkbox" id="exp_item_5">
+                            <li class="exp-item">
+                                <label for="exp_item_5">
+                                    <span>单品折扣5</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                            <input type="checkbox" id="exp_item_6">
+                            <li class="exp-item ">
+                                <label for="exp_item_6">
+                                    <span>单品折扣6</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                            <input type="checkbox" id="exp_item_7">
+                            <li class="exp-item ">
+                                <label for="exp_item_7">
+                                    <span>单品折扣7</span>
+                                    <span class="icon-chk"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dd class="view-box dis-whole-box next-view">
+                        <ul class="exp-items-list">
+                            <li class="exp-item active">
+                                <span>整体折扣1</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>整体折扣2</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>整体折扣3</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item ">
+                                <span>整体折扣4</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                            <li class="exp-item">
+                                <span>整体折扣5</span>
+                                <span class="icon-chk"></span>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </main>
+        </div>
+        <div class="btm-fixed carbon-black">
+            <footer class="btn-submit">
+                确认
+            </footer>
+        </div>
+    </div>
+    <!--折扣结束-->
+</div>
+</body>
+</html>

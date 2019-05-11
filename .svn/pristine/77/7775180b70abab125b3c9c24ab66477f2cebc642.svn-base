@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<meta name="format-detection" content="telephone=no">
+		<meta content="email=no" name="format-detection">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta http-equiv="Cache-Control" content="max-age=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>桌台开台</title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="fonts/iconfont.css">
+		<link rel="stylesheet" href="css/main.built.css">
+		<script src="javascript/jquery-2.1.1.min.js"></script>
+		<!--<script src="javascript/jquery.touchSwipe.min.js"></script>-->
+		<!--<script src="javascript/payType.js"></script>-->
+		<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+		<!--<script>
+			! function(e) {
+				function t(a) {
+					if(i[a]) return i[a].exports;
+					var n = i[a] = {
+						exports: {},
+						id: a,
+						loaded: !1
+					};
+					return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+				}
+				var i = {};
+				return t.m = e, t.c = i, t.p = "", t(0)
+			}([function(e, t) {
+				"use strict";
+				Object.defineProperty(t, "__esModule", {
+					value: !0
+				});
+				var i = window;
+				t["default"] = i.flex = function(normal, e, t) {
+					var a = e || 100,
+						n = t || 1,
+						r = i.document,
+						o = navigator.userAgent,
+						d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+						l = o.match(/U3\/((\d+|\.){5,})/i),
+						c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+						p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+						s = i.devicePixelRatio || 1;
+					p || d && d[1] > 534 || c || (s = 1);
+					var u = normal ? 1 : 1 / s,
+						m = r.querySelector('meta[name="viewport"]');
+					m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m.setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" + u + ",minimum-scale=" + u), r.documentElement.style.fontSize = normal ? "50px" : a *0.4* s * n + "px"
+				}, e.exports = t["default"]
+			}]);
+			flex(false, 100, 1);
+		</script>-->
+	</head>
+	<body>
+		<div class="gc-container tl-container">
+			<div class="header">
+				<a href="javascript:void(0);">
+					<i class="iconfont icon-zuo"></i>
+				</a>
+				<div class="input-wrapper">
+					<input class="iconfont" type="search" placeholder="&#xe61c; 快速查询桌台"/>
+				</div>
+				<a href="">
+					<i class="iconfont icon-saomiao"></i>
+				</a>
+			</div>
+			<div class="table-wrapper">
+				<div class="room-tab">
+					<ul class="nav nav-pills">
+						<li class="tab-nav active">
+							<a href="#all" data-toggle="tab">全部</a>
+						</li>
+						<li class="tab-nav">
+							<a href="#baoxiang" data-toggle="tab">包厢</a>
+						</li>
+						<li class="tab-nav">
+							<a href="#yilou" data-toggle="tab">一楼大厅</a>
+						</li>
+						<!--<li class="tab-nav page-turn">
+							<a href="" class="arrow btn-rooms-prev">
+								<i class="iconfont icon-page-prev"></i>
+							</a>
+							<a href="" class="arrow btn-rooms-next">
+								<i class="iconfont icon-page-next"></i>
+							</a>
+						</li>-->
+					</ul>
+				</div>
+				<div class="tab-content">
+					<ul id="all" class="tab-pane active tables">
+						<li class="table-item guest">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<div class="item-content">
+								<p>￥88.00</p>
+								<h3>A001</h3>
+								<p>(1/4人)</p>
+								<p>12:00(7分钟)</p>
+							</div>
+						</li>
+						<li class="table-item default-item active"data-toggle="modal" data-target="#peopleNumModal">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>就餐人数</h3>
+							</div>
+						</li>
+						<li class="table-item default-item"data-toggle="modal" data-target="#optionModal">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>桌台付款</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A003</h3>
+							</div>
+						</li>
+						<li class="table-item itemempty">占位</li>
+					</ul>
+					<ul id="baoxiang" class="tab-pane  tables">
+						<li class="table-item guest">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<div class="item-content">
+								<p>￥88.00</p>
+								<h3>A001</h3>
+								<p>(1/4人)</p>
+								<p>12:00(7分钟)</p>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item itemempty">占位</li>
+					</ul>
+					<ul id="yilou" class="tab-pane tables ">
+						<li class="table-item guest">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<div class="item-content">
+								<p>￥88.00</p>
+								<h3>A001</h3>
+								<p>(1/4人)</p>
+								<p>12:00(7分钟)</p>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item default-item">
+							<img class="table-bg"src="images/table-bg.jpg" alt="" />
+							<img class="table-icon"src="images/table-icon.jpg" alt="" />
+							<div class="item-content">
+								<h3>A001</h3>
+							</div>
+						</li>
+						<li class="table-item itemempty">占位</li>
+					</ul>
+				</div>
+			</div>
+			<!--<div class="table-btn">
+				<a href="" class="cancel-btn">取消</a>
+				<a href="" class="confirm-btn">确认</a>
+			</div>-->
+		</div>
+		<!--弹框-->
+		<!--就餐人数-->
+		<div class="modal fade" id="peopleNumModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel">A001</h4>
+					</div>
+					<div class="modal-body modal-body-grey clearfloat">
+						<div class="people-num-container">
+							<div class="num-input">
+								<span>人数</span>
+								<div class="input-wrapper">
+									<input type="" class="form-control" placeholder="" value="1">
+									<i class="iconfont icon-guanbi10"></i>
+								</div>
+							</div>
+							<div class="keyboard">
+								<span class="key">1</span>
+								<span class="key">2</span>
+								<span class="key">3</span>
+								<span class="key">4</span>
+								<span class="key">5</span>
+								<span class="key">6</span>
+								<span class="key">7</span>
+								<span class="key">8</span>
+								<span class="key">9</span>
+								<span class="key">0</span>
+								<span class="key">.</span>
+								<span class="key btn-clear">清除</span>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer modal-footer-grey no-border">
+						<button type="button" class="btn confirm-btn"data-dismiss="modal">确定</button>
+						<button type="button" class="btn cancel-btn" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--桌台付款-->
+		<div class="modal fade" id="optionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel">B001</h4>
+					</div>
+					<div class="modal-body no-padding clearfloat">
+						<div class="option-container">
+							<ul class="option-list">
+								<li class="active">
+									<span>付款</span>
+									<i class="iconfont icon-gou"></i>
+								</li>
+								<li>
+									<span>提单</span>
+								</li>
+								<li>
+									<span>开新单</span>
+								</li>
+								<li>
+									<span>换桌</span>
+								</li>
+								<li>
+									<span>客用单</span>
+								</li>
+								<li>
+									<span>打印</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="javascript/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		//选择桌台
+		$(".table-item").on("click", function() {
+			if(!$(this).hasClass("active")) {
+				$(".table-item").removeClass("active");
+				$(this).addClass("active");
+			}
+		})
+		//option切换
+		$(".option-list li").on("click", function() {
+			if(!$(this).hasClass("active")) {
+				$(this).siblings("li").removeClass("active");
+				$(this).siblings("li").children("i").remove();
+				$(this).addClass("active");
+				var html = '<i class="iconfont icon-gou"></i>';
+				$(this).append(html);
+			}
+		})
+		
+	</script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<meta name="format-detection" content="telephone=no">
+		<meta content="email=no" name="format-detection">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta http-equiv="Cache-Control" content="max-age=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>index</title>
+		<link rel="stylesheet" href="css/main.built.css">
+		<link rel="stylesheet" href="fonts/iconfont.css">
+		<script src="javascript/jquery-2.1.1.min.js"></script>
+
+		<script>
+			! function(e) {
+				function t(a) {
+					if(i[a]) return i[a].exports;
+					var n = i[a] = {
+						exports: {},
+						id: a,
+						loaded: !1
+					};
+					return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+				}
+				var i = {};
+				return t.m = e, t.c = i, t.p = "", t(0)
+			}([function(e, t) {
+				"use strict";
+				Object.defineProperty(t, "__esModule", {
+					value: !0
+				});
+				var i = window;
+				t["default"] = i.flex = function(e, t) {
+					var a = e || 100,
+						n = t || 1,
+						r = i.document,
+						o = navigator.userAgent,
+						d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+						l = o.match(/U3\/((\d+|\.){5,})/i),
+						c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+						p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+						s = i.devicePixelRatio || 1;
+					p || d && d[1] > 534 || c || (s = 1);
+					r.documentElement.style.fontSize = a / 2 * n + "px"
+				}, e.exports = t["default"]
+			}]);
+			flex(100, 1);
+		</script>
+	</head>
+
+	<body>
+		<div class="login-wrapper">
+			<div class="logo-wrapper">
+				<img src="images/logo-pic.png" class="logo-pic" />
+				<img src="images/logo-text.png" class="logo-text" />
+			</div>
+			<div class="login-container">
+				<div class="login">
+					<ul>
+						<li>
+							<input type="text" placeholder="" />
+						</li>
+						<li>
+							<input type="password" placeholder="" />
+						</li>
+					</ul>
+					<p>
+						<input type="checkbox" />记住用户名
+					</p>
+				</div>
+				<div class="login-btn" data-toggle="modal" data-target="#modal_msg_alert">登录</div>
+			</div>
+			<div class="login-footer">
+				<i class="tit-line line-left"></i>
+				<span class="txt">易云点移动支付收银系统@苏州捷智</span>
+				<i class="tit-line line-right"></i>
+			</div>
+		</div>
+		<!--弹框-->
+		<div class="modal" id="modal_msg_alert" style="display:none;">
+			<div class="modal-box">
+				<div class="modal-header clearfix">
+					<!--<div class="pm-a-part-left"></div>-->
+					<div class="modal-close i-close" data-dismiss="modal" aria-hidden="true"></div>
+				</div>
+				<div class="modal-body">
+					<p class="msg-desc">消息提示消息提示 警告警告预警预警御景预控那地方符合无日峰护额无痕u5d76f78wefgb</p>
+				</div>
+				<div class="modal-btm op-btns clearfix">
+					<div class="obtn-item grow-half"><span class="obtn-cancel" data-dismiss="modal" aria-hidden="true">取消</span></div>
+					<div class="obtn-item grow-half"><span class="obtn-submit">确定</span></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="javascript/main.comm.js"></script>
+
+</html>

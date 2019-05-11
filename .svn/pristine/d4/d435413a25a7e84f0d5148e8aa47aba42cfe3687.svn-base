@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.built.css">
+    <script src="javascript/jquery-2.1.1.min.js"></script>
+    <script src="javascript/jquery.touchSwipe.min.js"></script>
+    <script src="javascript/tableList.js"></script>
+    <script>
+        !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);r.documentElement.style.fontSize=a/2*n+"px"},e.exports=t["default"]}]);  flex(100, 1);
+    </script>
+</head>
+<body>
+<div class="gc-container">
+    <div class="table-box">
+        <div class="top-header">
+            <div class="t-part-left">
+                <div class="icon-admin">
+                     <ul class="tb-more-list">
+                         <li>退登</li>
+                    </ul>
+                </div>
+                <span class="txt-admin">Admin</span>
+            </div>
+            <ul class="t-part-right">
+                <li>
+                    <div class="txt-no-tab">
+                        无卓开单
+                    </div>
+                    <div class="more-box">
+                        <ul class="more-detail-list">
+                            <li>提单</li>
+                            <li class="chk-update-item">检查更新</li>
+                            <li>报表</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="tb_wrapper" class="tb-list m-scroll-wrap">
+            <main>
+                <div class="search-wrap">
+                    <div id="search_view" class="header-search-view">
+                        <div id="search_placeholder">
+                            <span >搜索</span>
+                        </div>
+                    </div>
+                    <form id="search_form" method="get" class="header-searchform-wrapper">
+                        <div class="s-form-search search-form">
+                            <input id="searchform_ipt" class="searchform-ipt" type="text" placeholder="...">
+                            <button>
+                                <span></span>
+                            </button>
+                        </div>
+                        <div class="form-btn">
+                            <input type="submit" name="search" class="icons-search">
+                        </div>
+                        <div id="del_search" class="del-search">
+                        </div>
+                    </form>
+                </div>
+                <div class="table-wrapper">
+                   <dl>
+                       <dt class="tab-para-name">A区</dt>
+                       <dd>
+                           <ul class="local-tab-list">
+                               <li class="tab-item ">
+                                   <span class="status sta-overtime">A1
+                                        <span class="sta-txt">TOTAL 2</span>
+                                   </span>
+                               </li>
+                               <li class="tab-item ">
+                                   <span class="status sta-clear">A2
+                                       <span class="sta-txt">CLEAN</span>
+                                   </span>
+                               </li>
+                               <li class="tab-item ">
+                                   <span class="status sta-using">A3</span>
+                               </li>
+                               <li class="tab-item ">A4</li>
+                               <li class="tab-item active">A5</li>
+                               <li class="tab-item ">A6</li>
+                               <li class="tab-item ">A7</li>
+                               <li class="tab-item ">A8</li>
+                               <li class="tab-item ">A1</li>
+                               <li class="tab-item ">A2</li>
+                               <li class="tab-item ">A3</li>
+                               <li class="tab-item ">A4</li>
+                               <li class="tab-item ">A5</li>
+                               <li class="tab-item ">A6</li>
+                               <li class="tab-item ">A7</li>
+                               <li class="tab-item ">A8</li>
+                           </ul>
+                       </dd>
+                       <dt class="tab-para-name">B区</dt>
+                       <dd>
+                           <ul class="local-tab-list">
+                               <li class="tab-item ">
+                                   <span class="status sta-overtime">A1
+                                        <span class="sta-txt">TOTAL 2</span>
+                                   </span>
+                               </li>
+                               <li class="tab-item ">
+                                   <span class="status sta-clear">A2
+                                       <span class="sta-txt">CLEAN</span>
+                                   </span>
+                               </li>
+                               <li class="tab-item ">
+                                   <span class="status sta-using">A3</span>
+                               </li>
+                               <li class="tab-item ">A4</li>
+                               <li class="tab-item active">A5</li>
+                               <li class="tab-item ">A6</li>
+                               <li class="tab-item ">A7</li>
+                               <li class="tab-item ">A8</li>
+                               <li class="tab-item ">A1</li>
+                               <li class="tab-item ">A2</li>
+                               <li class="tab-item ">A3</li>
+                               <li class="tab-item ">A4</li>
+                               <li class="tab-item ">A5</li>
+                               <li class="tab-item ">A6</li>
+                               <li class="tab-item ">A7</li>
+                               <li class="tab-item ">A8</li>
+                           </ul>
+                       </dd>
+                   </dl>
+                </div>
+            </main>
+        </div>
+        <div class="btm-fixed carbon-black">
+            <footer class="tb-footer">
+                <div class="co-pt-one">
+                    <div class="tab-mark-desc">
+                        <span class="logo-circle dark-brown"></span>
+                        <span class="tab-m-txt">已占用</span>
+                        <span class="logo-circle purplish-red"></span>
+                        <span class="tab-m-txt">&gt0.03H</span>
+                        <span class="logo-circle middle-gray"></span>
+                        <span class="tab-m-txt">清桌</span>
+                    </div>
+                    <div class="icon-toggle"></div>
+                    <div class="scan-box"></div>
+                </div>
+                <div class="co-pt-second">
+                    <div class="edit-number">
+                        <div class="ed-txt"> 用餐人数</div>
+                        <div class="ed-ipt" contenteditable="true"></div>
+                    </div>
+                    <div class="btn-billing brilliant-yellow">开单</div>
+                    <ul class="tab-btn-list">
+                        <li class="tab-bill btn-item dark-brown">提单</li>
+                        <li class="tab-pm btn-item dark-brown">付款</li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="pop-bg"></div>
+    <div class="chk-update-box base-alert">
+        <div class="header-title">
+            <div class="pm-a-part-left">
+                <div class="alert-icon"></div>
+            </div>
+            <div class="pm-a-part-right close"></div>
+        </div>
+        <div class="main-content">
+            <div>
+                <span class="vs-txt">当前版本</span>
+                <span class="vs cur-version">11.02.27</span>
+            </div>
+            <div>
+                <span class="vs-txt">最新版本 </span>
+                <span class="vs latest-version">11.04.14</span>
+            </div>
+        </div>
+        <div class="ft-bottom carbon-black">
+            <div class="a-btn-confirm">更新版本</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

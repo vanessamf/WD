@@ -1,0 +1,286 @@
+/**
+ * Created by chaoyue on 2017/3/28.
+ */
+function stopPp(e){
+    e.stopPropagation?e.stopPropagation():e.cancelBubble=true;
+}
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+$(function(){
+	$('.sel-f-item').on("click",function() {
+		_this = $(this);
+		$(".pop-bg").show();
+		$(".attention-box").show();
+		closeAttentionBox(_this);
+	})
+	var closeAttentionBox = function(selector) {
+		$('.btn-confirm').click(function() {
+//			$(".pop-bg").hide();
+			$(".cook-type-box").hide();
+//			$(".attention-box").hide();
+		})
+		$('.btn-cancle').click(function() {
+//			$(".pop-bg").hide();
+			$(".cook-type-box").hide();
+			//$(".attention-box").hide();
+		})
+	}
+	$(".cook-type-container .type-btn").on("click",function(){
+		$(this).toggleClass('active');
+	});
+})
+$(function(){
+    var top_f =$(".top-fixed"),
+        bottom_f =$(".bottom-fixed"),
+        win = $(window),
+        $search_view =$(".header-search-view"),
+        $sub_list = $(".menu-sub-list"),
+        menu_w=$("#menu_wrapper"),
+        search_view = $("#search_view"),
+        search_form =$("#search_form"),
+        del_search = $("#del_search"),
+        menu_nav = $("#menu_nav"),
+        menuitem_detail =$(".mt-d-item"), //二级菜单li
+
+        //增加 or 删除 数量
+        sel_f_container = $(".sel-food-container"),
+        btn_plus = $(".btn-plus"),
+        btn_minus = $(".btn-minus"),
+		
+		
+        btm_fixed = $(".bottom-fixed"),
+        chk_container = $(".checkout-container"),
+        btn_submit = $(".checkout-container .btn-box"),
+        co_part_second = $(".co-part-second"),
+
+        st_diner_box = $(".setting-diners-box"),
+        st_tab_box =$(".setting-tab-box"),
+        rg_dinner_box =$(".regular-dinner-box"),
+        bg = $(".pop-bg");
+
+    menu_w.height(win.height()-bottom_f.height()-top_f.height());
+
+
+    //通过tableList的提单按钮 进入当前页面的状态设置
+    if(getQueryString("ft-status") == "open"){
+        btm_fixed.addClass("priority");
+        bg.addClass("priority")
+    }
+
+    $(".index-box .back-box").click(function(){
+        location.href= 'login.html'
+    });
+    $(".ing-list-box .back-box").click(function(){//配料弹出框返回
+        $(".index-box").addClass("priority")
+        $(".ing-list-box").removeClass("priority")
+    });
+
+    $(".more-box").on('click',function(){
+        $(".more-detail-list").toggleClass('active')
+    });
+
+    $(".num-diners-box").on('click',function(){
+        bg.addClass("priority");
+        st_diner_box.addClass("priority")
+    });
+
+    $(".sel-tab-box").on('click',function(){
+        st_tab_box.addClass("priority");
+        bg.addClass("priority");
+    });
+
+    search_view.on({
+        'touchstart':function(event){
+            event.preventDefault();
+            $(this).addClass("next-view");
+            search_form.addClass("active");
+            $("#searchform_ipt").focus();
+        }
+    })
+    del_search.on({
+        'touchstart':function(e){
+            e.preventDefault();
+            search_view.removeClass("next-view")
+            search_form.removeClass("active");
+        }
+    });
+
+    menu_nav .on('click','li',function(){//点击一级菜单
+        $(this).addClass("active").siblings().removeClass("active")
+        // $(this).siblings().removeClass("active").end().addClass("active")
+    });
+
+    $(".flag-item").on('click',function(e){
+        var _this = $(this),
+            _cindex = _this.index();
+        if(_cindex === parseInt(2)){
+            _this.removeClass("current-view").parent().children().eq(0).addClass("current-view")
+        }else{
+            _this.removeClass("current-view").next().addClass("current-view")
+        }
+
+    })
+    menuitem_detail.on({//点击菜品触发
+        'click':function(e){
+            e.preventDefault();
+            var _this = $(this);
+            if($(e.target).hasClass("mark-cdm")){
+                $(".index-box").removeClass("priority")
+                $(".ing-list-box").addClass("priority")
+            }else{
+                var several_child=_this.children().find(".hm-several");
+                if(several_child.hasClass("active")){
+                    // several_child.removeClass("active")
+                    several_child.text(parseInt(several_child.text())+parseInt(1));
+                }else{
+                    several_child.addClass("active")
+                }
+            }
+        }
+    });
+
+    sel_f_container.on("click",'p a',function(e){//加减菜
+        var _this = $(this),
+            sibling_ipt =  _this.parent().parent().find("input"),
+            sm = sibling_ipt.val();
+        if($(e.target).hasClass("plus")){
+            sibling_ipt.val(parseInt(sm)+parseInt(1))
+        }
+        if($(e.target).hasClass("minus")){
+            if(sm == 1){
+                /*_this.off('click','p a',function(){
+                    console.log("接触绑定")
+                })*/
+                var dd_p = _this.parent().parent().parent().parent();
+                dd_p.remove();
+            }else{
+                sibling_ipt.val(sm-1)
+            }
+        }
+    })
+
+    co_part_second.on({
+        'click':function(e){
+            if(e.target.id != "btn_submit"){
+                e.preventDefault();
+                if(!btm_fixed.hasClass("priority")){
+                    btm_fixed.addClass("priority");
+                    bg.addClass("priority")
+                }else{
+                    console.log(e.target.localName,e.target.id)
+                    btm_fixed.removeClass("priority");
+                    bg.removeClass("priority")
+                }
+            }
+            if(e.target.id == "btn_submit"){
+            //提交事件
+            }
+        }
+    })
+    $(".close").on('click',function(e){
+        if(btm_fixed.hasClass("priority"))
+            btm_fixed.removeClass("priority");
+
+        if(st_diner_box.hasClass("priority"))
+            st_diner_box.removeClass("priority")
+
+        if(st_tab_box.hasClass("priority"))
+            st_tab_box.removeClass("priority")
+
+        if(rg_dinner_box.hasClass("priority"))
+            rg_dinner_box.removeClass("priority")
+
+        bg.removeClass("priority")
+    })
+	//配料弹出框事件
+    $(".ing-list dl").on("click",".ing-base>li,.ing-sub-base>li",function(e){
+        stopPp(e);
+        var _this = $(this),
+            index = _this.index(),
+            e_target = $(e.target),
+            sm = 0;
+        //当前没有选中
+        if(!_this.hasClass("active")){
+           /* _this.siblings().each(function(){
+                var pre_li = $(this),
+                    pre_index = pre_li.index();
+                if(pre_li.hasClass("active")){
+                    pre_li.children(".hm-several").text(1)
+                    pre_li.children(".ing-dt-delete").removeClass("priority");
+                    return false;
+                }
+            })
+            _this.addClass("active").siblings().removeClass("active");*/
+
+            _this.addClass("active");
+            if(_this.hasClass("have-sub-ing")){
+                _this.parent().next().addClass("priority")
+
+            }else if(_this.parent().next().hasClass("priority")){
+
+                _this.parent().next().removeClass("priority")
+            }
+        }else{
+            //当前已选中，点击删除按钮
+            if(e_target.hasClass("ing-dt-delete")){
+                if(e_target.parent().hasClass("have-sub-ing"))
+                    e_target.parent().parent().next().removeClass("priority")
+                //清空数量 去除选中状态
+                e_target.removeClass("priority")
+                    .prev().text(1).end()
+                    .parent().removeClass("active");
+
+            }else if(e_target.hasClass("hm-several")){
+                //当前选中状态，点击数量圆圈区出现删除按钮
+                e_target.next().addClass("priority")
+            }else{
+                //没有触发其他按钮区  单纯增加数量
+                sm = _this.children(".hm-several").text();
+                _this.children(".hm-several").text( parseInt(sm)+parseInt(1))
+            }
+
+        }
+
+    })
+
+    //footer张开 点击提交按钮 如果有可组套餐 出现选择套餐页面
+    $("#btn_submit").click(function(){
+        btm_fixed.removeClass("priority")
+        rg_dinner_box.addClass("priority")
+        if(!bg.hasClass("priority"))
+            bg.addClass("priority")
+    })
+
+    bg.on({
+        'click':function(e){
+            e.preventDefault();
+            if(btm_fixed.hasClass("priority")){
+                btm_fixed.removeClass("priority");
+            }
+            if(st_diner_box.hasClass("priority")){
+                st_diner_box.removeClass("priority")
+            }
+            if(st_tab_box.hasClass("priority"))
+                st_tab_box.removeClass("priority")
+
+            if(rg_dinner_box.hasClass("priority"))
+                rg_dinner_box.removeClass("priority")
+			if(!$(".cook-type-box").is(":hidden"))
+				$(".cook-type-box").hide();
+            bg.removeClass("priority")
+        }
+    })
+
+    $(".tab-list").on('click','li',function(e){
+        $(this).addClass("active").siblings().removeClass("active")
+    })
+
+    $(".go-pm").on('click',function(){
+        location.href='/payment.html'
+    })
+});
+
+

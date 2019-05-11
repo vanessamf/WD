@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.built.css">
+    <script src="javascript/jquery-2.1.1.min.js"></script>
+    <script src="javascript/jquery.touchSwipe.min.js"></script>
+    <script src="javascript/splitCheck.js"></script>
+    <script>
+        !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);r.documentElement.style.fontSize=a/2*n+"px"},e.exports=t["default"]}]);  flex(100, 1);
+    </script>
+    <style>
+        .sp-chk-box{
+            width:100%;height:100%;display: flex;flex-direction: column;align-items: stretch;
+        }
+        .sp-chk-box .t-part-right{
+            flex-basis: 1.4rem;
+        }
+        .sp-chk-list{
+            flex-grow:1;  display: flex;flex-direction: column;align-items: stretch;
+        }
+        .sp-chk-box main{
+            overflow:auto; padding:.27rem .2rem;display: block;
+        }
+        .sp-items-list{
+            display: flex; flex-direction:column;align-items: stretch;
+        }
+        .sp-chk-item{
+            flex-shrink: 0;
+            height: 1.6rem;padding:.2rem .17rem;
+            -webkit-box-shadow: 0 .03rem .1rem #ddd;
+            -moz-box-shadow: 0 .03rem .1rem #ddd;
+            box-shadow: 0 .03rem .1rem #ddd;
+            -webkit-border-radius:.05rem;
+            -moz-border-radius:.05rem;
+            border-radius:.05rem;
+            display: flex;align-items: stretch;justify-content: space-between;
+            margin-bottom:.2rem;
+        }
+        .sp-chk-num-box{
+            flex-basis: 3rem;
+        }
+        .sp-order-num{
+            font-size:36%;letter-spacing: .01rem;
+        }
+        .sp-chk-p{
+            font-size:24%;
+            display: flex;
+        }
+        .sp-p-txt{
+            flex-basis: 1.6rem;
+        }
+        .sp-chk-p .total-price{
+            flex-grow:1;
+        }
+        .sp-chk-usr-box{
+            position: relative;
+            flex-basis: 1.2rem;
+        }
+        .sp-chk-usr-box .icon-usr-b{
+            position: absolute;width:.6rem;height:100%;
+            background: url(images/icon-person-b.png) no-repeat .1rem .05rem;
+            background-size:60%;
+        }
+        .sp-chk-usr-box .num-usr{
+            font-size:36%;position: absolute;right:0;width:.6rem;top:0;height:100%;
+        }
+    </style>
+</head>
+<body>
+<div class="gc-container">
+    <div class="sp-chk-box">
+        <div class="top-header">
+            <div class="t-part-left">
+                <span class="back-box"></span>
+            </div>
+            <ul class="t-part-right">
+                <li>
+                    <div class="sel-tab-box">
+                        <span class="icon-tab"></span>
+                        <span class="tab-num">A3</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="sp_chk_wrapper" class="sp-chk-list m-scroll-wrap">
+            <main>
+                <ul class="sp-items-list">
+                    <li class="sp-chk-item light-gray">
+                        <div class="sp-chk-num-box">
+                            <div class="sp-order-num">Check04002</div>
+                            <div class="sp-chk-p">
+                                <span class="sp-p-txt">Crand Total:</span>
+                                <span class="total-price">￥12.00</span>
+                            </div>
+                        </div>
+                        <div class="sp-chk-usr-box">
+                            <span class="icon-usr-b"></span>
+                            <span class="num-usr">4</span>
+                        </div>
+                    </li>
+                    <li class="sp-chk-item light-gray">
+                        <div class="sp-chk-num-box">
+                            <div class="sp-order-num">Check04002</div>
+                            <div class="sp-chk-p">
+                                <span class="sp-p-txt">Crand Total:</span>
+                                <span class="total-price">￥1234.00</span>
+                            </div>
+                        </div>
+                        <div class="sp-chk-usr-box">
+                            <span class="icon-usr-b"></span>
+                            <span class="num-usr">12</span>
+                        </div>
+                    </li>
+                    <li class="sp-chk-item light-gray">
+                        <div class="sp-chk-num-box">
+                            <div class="sp-order-num">Check04027</div>
+                            <div class="sp-chk-p">
+                                <span class="sp-p-txt">Crand Total:</span>
+                                <span class="total-price">￥127.00</span>
+                            </div>
+                        </div>
+                        <div class="sp-chk-usr-box">
+                            <span class="icon-usr-b"></span>
+                            <span class="num-usr">3</span>
+                        </div>
+                    </li>
+                    <li class="sp-chk-item light-gray">
+                        <div class="sp-chk-num-box">
+                            <div class="sp-order-num">Check04002</div>
+                            <div class="sp-chk-p">
+                                <span class="sp-p-txt">Crand Total:</span>
+                                <span class="total-price">￥12.00</span>
+                            </div>
+                        </div>
+                        <div class="sp-chk-usr-box">
+                            <span class="icon-usr-b"></span>
+                            <span class="num-usr">4</span>
+                        </div>
+                    </li>
+                </ul>
+            </main>
+        </div>
+    </div>
+</div>
+</body>
+</html>

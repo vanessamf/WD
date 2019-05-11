@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.built.css">
+    <script src="javascript/jquery-2.1.1.min.js"></script>
+    <script src="javascript/sel-payment.js"></script>
+    <script>
+        !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);r.documentElement.style.fontSize=a/2*n+"px"},e.exports=t["default"]}]);  flex(100, 1);
+    </script>
+</head>
+<body>
+<div class="gc-container">
+    <div class="sel-pm-box">
+        <div class="top-header">
+            <div class="t-part-left">
+                <span class="back-box"><a href="payment.html"></a></span>
+            </div>
+        </div>
+        <div id="sel_pm_wrapper" class="sel-pm m-scroll-wrap">
+            <main>
+                <div class="item-pm-mtd active">
+                    <span>支付宝</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>微信</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>现金</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>信用卡</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>蚂蚁花呗</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>付款方式1</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>付款方式2</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>付款方式3</span>
+                    <span class="icon-chk"></span>
+                </div>
+                <div class="item-pm-mtd">
+                    <span>付款方式4</span>
+                    <span class="icon-chk"></span>
+                </div>
+            </main>
+        </div>
+        <div class="btm-fixed carbon-black">
+            <footer class="btn-submit">
+                确认
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

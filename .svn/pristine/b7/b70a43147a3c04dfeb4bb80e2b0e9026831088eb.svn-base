@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<meta name="format-detection" content="telephone=no">
+		<meta content="email=no" name="format-detection">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta http-equiv="Cache-Control" content="max-age=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>付款</title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="fonts/iconfont.css">
+		<link rel="stylesheet" href="css/main.built.css">
+		
+		<!--<script src="javascript/jquery.touchSwipe.min.js"></script>-->
+		<!--<script src="javascript/payType.js"></script>-->
+		<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+	</head>
+
+	<body>
+		<div class="gc-container menu-container">
+			<div class="header">
+				<a href="javascript:void(0);">
+					<i class="iconfont icon-zuo"></i>
+				</a>
+				<div class="title-wrapper">一品桂圆</div>
+				<a href="">
+					继续点餐
+				</a>
+			</div>
+			<div class="payment-wrapper">
+				<div class="payment-content">
+					<div class="price">
+						收款：164.00
+					</div>
+					<div class="menu-detail">
+						<ul>
+							<li class="menu-item">
+								<div class="item-wrapper">
+									<div>澳洲龙虾</div>
+									<div>￥100.00</div>
+								</div>
+								<div class="discount">
+									<div>8折</div>
+									<div>-￥20.00</div>
+								</div>
+							</li>
+							<li class="menu-item">
+								<div class="item-wrapper">
+									<div>澳洲龙虾</div>
+									<div>￥164.00</div>
+								</div>
+							</li>
+							<li class="menu-item">
+								<div class="item-wrapper">
+									<div>澳洲龙虾</div>
+									<div>￥164.00</div>
+								</div>
+							</li>
+							<li class="menu-item">
+								<div class="item-wrapper">
+									<div>澳洲龙虾</div>
+									<div>￥164.00</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="item-wrapper">
+								<div>总价</div>
+								<div>￥164.00</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-wrapper">
+								<div>已收</div>
+								<div>￥164.00</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-wrapper">
+								<div>服务费</div>
+								<div>￥164.00</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-wrapper">
+								<div>税</div>
+								<div>￥164.00</div>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="payment-detail">
+						<ul>
+							
+							<li>
+								<div>单品折扣</div>
+								<div>
+									￥164.00
+									<i class="iconfont icon-you4"></i>
+								</div>
+							</li>
+							<li>
+								<div>整单折扣</div>
+								<div>
+									￥164.00
+									<i class="iconfont icon-you4"></i>
+								</div>
+							</li>
+							<li>
+								<div>小费</div>
+								<div>
+									￥164.00
+									<i class="iconfont icon-you4"></i>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="paytype-content">
+					<ul>
+						<li class="active">
+							<a href="">
+								<i class="wechat"></i>
+								<p>微信</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="alipay"></i>
+								<p>支付宝</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="cash"></i>
+								<p>现金</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="bankCard"></i>
+								<p>银行卡</p>
+							</a>
+						</li>
+						<li class="itemempty"></li>
+						<li class="itemempty"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="javascript/jquery-2.1.1.min.js"></script>
+	<script src="javascript/bootstrap.min.js"></script>
+	<script src="javascript/jquery.fly.min.js"></script>
+	<script src="javascript/requestAnimationFrame.js"></script>
+	<script type="text/javascript">
+		$(".payment-content .menu-detail li.menu-item").on("click",function(){
+			$(this).siblings("li.menu-item").removeClass("active");
+			$(this).addClass("active");
+		})
+	</script>
+
+</html>

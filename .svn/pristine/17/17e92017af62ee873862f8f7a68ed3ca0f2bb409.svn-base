@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<meta name="format-detection" content="telephone=no">
+		<meta content="email=no" name="format-detection">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta http-equiv="Cache-Control" content="max-age=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>首页</title>
+		<link rel="stylesheet" href="css/main.built.css">
+		<script src="javascript/jquery-2.1.1.min.js"></script>
+		<script src="javascript/jquery.touchSwipe.min.js"></script>
+		<!--<script src="javascript/tableList.js"></script>-->
+		<!--<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>-->
+		<script>
+			! function(e) {
+				function t(a) {
+					if(i[a]) return i[a].exports;
+					var n = i[a] = {
+						exports: {},
+						id: a,
+						loaded: !1
+					};
+					return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+				}
+				var i = {};
+				return t.m = e, t.c = i, t.p = "", t(0)
+			}([function(e, t) {
+				"use strict";
+				Object.defineProperty(t, "__esModule", {
+					value: !0
+				});
+				var i = window;
+				t["default"] = i.flex = function(normal, e, t) {
+					var a = e || 100,
+						n = t || 1,
+						r = i.document,
+						o = navigator.userAgent,
+						d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+						l = o.match(/U3\/((\d+|\.){5,})/i),
+						c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+						p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+						s = i.devicePixelRatio || 1;
+					p || d && d[1] > 534 || c || (s = 1);
+					var u = normal ? 1 : 1 / s,
+						m = r.querySelector('meta[name="viewport"]');
+					m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m.setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" + u + ",minimum-scale=" + u), r.documentElement.style.fontSize = normal ? "50px" : a *0.4* s * n + "px"
+				}, e.exports = t["default"]
+			}]);
+			flex(false, 100, 1);
+		</script>
+	</head>
+
+	<body>
+		<div class="gc-container hp-container">
+			<div class="hp-box">
+				<div class="top-header">
+					<div class="back-box">
+						<a href="login.html"></a>
+					</div>
+					<div class="tit">我家小馆</div>
+					<div class="more-box">
+						<ul class="more-detail-list">
+							<li>返回</li>
+							<li>我家小馆</li>
+							<li>退登</li>
+						</ul>
+					</div>
+				</div>
+				<div id="hp_wrapper" class="hp m-scroll-wrap">
+					<main>
+						<div class="hp-banner">
+							<img src="images/banner02.jpg" alt="" />
+							<div class="overlay"></div>
+							<ul>
+								<li>
+									<a href="">
+										<!--<img src="images/nav-icon08.png" />-->
+										<i class="scan"></i>
+										<p>扫一扫</p>
+									</a>
+								</li>
+								<li>
+									<a href="tableList.html">
+										<!--<img src="images/nav-icon09.png" />-->
+										<i class="billing"></i>
+										<p>开单</p>
+									</a>
+								</li>
+								<li>
+									<a href="gathering.html">
+										<!--<img src="images/nav-icon10.png" />-->
+										<i class="collection"></i>
+										<p>快速收款</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<nav class="hp-nav">
+							<ul>
+								<li>
+									<a href="">
+										<i class="bill"></i>
+										<p>已结账单</p>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="order"></i>
+										<p>挂起订单</p>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="turnover"></i>
+										<p>营业流水</p>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="estimate"></i>
+										<p>商品沽清</p>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="outerOrder">
+											<div class="num">
+												1
+											</div>
+										</i>
+										<p>外接单</p>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="earnings"></i>
+										<p>外接单流水</p>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</main>
+				</div>
+				<div class="btm-fixed">
+					<footer class="hp-footer">
+						<ul>
+							<li class="active">
+								<a href="">
+									<i class="icon-hp"></i>
+									<p>主页</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<i class="icon-msg"></i>
+									<p>消息</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<i class="icon-user"></i>
+									<p>我的</p>
+								</a>
+							</li>
+						</ul>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

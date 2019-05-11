@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<meta name="format-detection" content="telephone=no">
+		<meta content="email=no" name="format-detection">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta http-equiv="Cache-Control" content="max-age=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>桌台开台</title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="fonts/iconfont.css">
+		<link rel="stylesheet" href="css/main.built.css">
+		<script src="javascript/jquery-2.1.1.min.js"></script>
+		<!--<script src="javascript/jquery.touchSwipe.min.js"></script>-->
+		<!--<script src="javascript/payType.js"></script>-->
+		<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+	</head>
+	<body>
+		<div class="gc-container order-container">
+			<div class="header">
+				<a href="javascript:void(0);">
+					<i class="iconfont icon-zuo"></i>
+				</a>
+				<div class="order-tab">
+					<ul class="nav nav-pills">
+						<li class="tab-nav active">
+							<a href="#xindingdan" data-toggle="tab">
+								新订单
+								<i class="badge">1</i>
+							</a>
+						</li>
+						<li class="tab-nav">
+							<a href="#yijiedan" data-toggle="tab">
+								已结单
+								<i class="badge">99</i>
+							</a>
+						</li>
+						<li class="tab-nav">
+							<a href="#yichangdingdan" data-toggle="tab">异常订单
+							<i class="badge">3</i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="order-wrapper tab-content">
+				<div id="xindingdan"class="tab-pane active">
+					<div class="order-header">
+						<div class="select-wrapper">
+							<span>全部</span>
+							<i class="iconfont icon-xia"></i>
+						</div>
+						<div class="input-wrapper">
+							<input class="iconfont" type="search" placeholder="&#xe61c; 查询订单">
+						</div>
+					</div>
+					<div class="order-content">
+						<div class="order-item">
+							<div class="basic-info">
+								<div class="num">#49</div>
+								<div class="state-dec">
+									<span>等待处理</span>
+									<span>下单时间：06-27 12:00</span>
+								</div>
+								<span>自提</span>
+								<div class="pay-type">微信</div>
+							</div>
+							<div class="user-info">
+								<div class="user-dec">
+									<div class="name">
+										<span>张建国</span>
+										<span>先生</span>
+									</div>
+									<div class="tel">
+										13928271228
+									</div>
+								</div>
+								<div class="member">
+									黄金会员：最近60天第二次下单
+								</div>
+								<div class="address">
+									地址：苏州工业园区崇文路199号国华大厦A417
+								</div>
+							</div>
+							<div class="order-info">
+								<ul class="clearfloat">
+									<li >
+										<span class="col-xs-7 no-padding">新奥尔良烤鸡腿堡（套餐）</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">香菇鸡腿</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">金球薯饼</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">米饭</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">米asfasfsa米asfasfsafafafafafafasfasdsfs饭</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+								</ul>
+							</div>
+							<div class="other-info">
+								<div class="price">总计：￥44.00</div>
+								<div class="remark">
+									<span>
+										备注：
+									</span>
+									<span>
+										少放辣，不要葱，香，菜
+									</span>
+								</div>
+								<div class="btn-wrapper">
+									<a href="" class="default-btn">拒单</a>
+									<a href="" class="primary-btn">接单</a>
+								</div>
+							</div>
+						</div>
+						<div class="order-item">
+							<div class="basic-info">
+								<div class="num">#49</div>
+								<div class="state-dec">
+									<span class="primary-color">尽快送达</span>
+									<span>下单时间：06-27 12:00</span>
+								</div>
+								<span>自提</span>
+								<div class="pay-type">微信</div>
+							</div>
+							<div class="user-info">
+								<div class="user-dec">
+									<div class="name">
+										<span>张建国</span>
+										<span>先生</span>
+									</div>
+									<div class="tel">
+										13928271228
+									</div>
+								</div>
+								<div class="member">
+									黄金会员：最近60天第二次下单
+								</div>
+								<div class="address">
+									地址：苏州工业园区崇文路199号国华大厦A417
+								</div>
+							</div>
+							<div class="order-info">
+								<ul class="clearfloat">
+									<li >
+										<span class="col-xs-7 no-padding">新奥尔良烤鸡腿堡（套餐）</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">香菇鸡腿</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">金球薯饼</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">米饭</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">米asfasfsa米asfasfsafafafafafafasfasdsfs饭</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+								</ul>
+							</div>
+							<div class="other-info">
+								<div class="price">总计：￥44.00</div>
+								<div class="remark">
+									<span>
+										备注：
+									</span>
+									<span>
+										少放辣，不要葱，香，菜
+									</span>
+								</div>
+								<div class="btn-wrapper">
+									<a href="" class="default-btn">拒单</a>
+									<a href="" class="primary-btn">结单</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btn-over-all">
+					全部<br>结单
+				</div>
+				</div>
+				<div id="yijiedan"class="tab-pane">
+					<div class="order-header">
+						<div class="select-wrapper">
+							<span>全部</span>
+							<i class="iconfont icon-xia"></i>
+						</div>
+						<div class="input-wrapper">
+							<input class="iconfont" type="search" placeholder="&#xe61c; 查询订单">
+						</div>
+					</div>
+					<div class="order-content">
+						<div class="order-item">
+							<div class="basic-info">
+								<div class="num">#49</div>
+								<div class="state-dec">
+									<span class="primary-color">尽快送达</span>
+									<span>下单时间：06-27 12:00</span>
+								</div>
+								<span>自提</span>
+								<div class="pay-type">微信</div>
+							</div>
+							
+							<div class="user-info">
+								<div class="user-dec">
+									<div class="name">
+										<span>张建国</span>
+										<span>先生</span>
+									</div>
+									<div class="tel">
+										13928271228
+									</div>
+								</div>
+								<div class="member">
+									黄金会员：最近60天第二次下单
+								</div>
+								<div class="address">
+									地址：苏州工业园区崇文路199号国华大厦A417
+								</div>
+							</div>
+							<div class="horseman-info">
+								<div class="name">
+									<span>骑手</span>
+									<span>张三</span>
+								</div>
+								<div class="tel">124342234452</div>
+							</div>
+							<div class="order-num">
+								<div>4件商品</div>
+								<div class="examine">
+									<span id="">
+										查看
+									</span>
+									<i class="iconfont icon-xia"></i>
+								</div>
+							</div>
+							<div class="order-info">
+								<ul class="clearfloat">
+									<li >
+										<span class="col-xs-7 no-padding">新奥尔良烤鸡腿堡（套餐）</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">香菇鸡腿</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">金球薯饼</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">米饭</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">米asfasfsa米asfasfsafafafafafafasfasdsfs饭</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+								</ul>
+							</div>
+							<div class="other-pay">
+								<ul>
+									<li>
+										<span>打包盒</span>
+										<span>￥2</span>
+									</li>
+									<li>
+										<span>配送费</span>
+										<span>￥2</span>
+									</li>
+									<li>
+										<span><i class="iconfont icon-jian-filling"></i>满25减10</span>
+										<span>￥22.00</span>
+									</li>
+									<li>
+										<span><i class="iconfont icon-hongbao"></i>红包</span>
+										<span>￥2</span>
+									</li>
+									
+								</ul>
+							</div>
+							<div class="other-info">
+								<div class="price">总计：￥44.00</div>
+								<div class="remark">
+									<span>
+										备注：
+									</span>
+									<span>
+										少放辣，不要葱，香，菜
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="order-item">
+							<div class="basic-info">
+								<div class="num">#49</div>
+								<div class="state-dec">
+									<span class="primary-color">尽快送达</span>
+									<span>下单时间：06-27 12:00</span>
+								</div>
+								<span>自提</span>
+								<div class="pay-type">微信</div>
+							</div>
+							
+							<div class="user-info">
+								<div class="user-dec">
+									<div class="name">
+										<span>张建国</span>
+										<span>先生</span>
+									</div>
+									<div class="tel">
+										13928271228
+									</div>
+								</div>
+								<div class="member">
+									黄金会员：最近60天第二次下单
+								</div>
+								<div class="address">
+									地址：苏州工业园区崇文路199号国华大厦A417
+								</div>
+							</div>
+							<div class="horseman-info">
+								<div class="name">
+									<span>骑手</span>
+									<span>张三</span>
+								</div>
+								<div class="tel">124342234452</div>
+							</div>
+							<div class="order-num">
+								<div>4件商品</div>
+								<div class="examine">
+									<span id="">
+										查看
+									</span>
+									<i class="iconfont icon-xia"></i>
+								</div>
+							</div>
+							<div class="order-info">
+								<ul class="clearfloat">
+									<li >
+										<span class="col-xs-7 no-padding">新奥尔良烤鸡腿堡（套餐）</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">香菇鸡腿</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">金球薯饼</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">米饭</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+									<li>
+										<span class="col-xs-7 no-padding">米asfasfsa米asfasfsafafafafafafasfasdsfs饭</span>
+										<span class="col-xs-2 no-padding">X1</span>
+										<span class="col-xs-3 no-padding">￥22</span>
+									</li>
+								</ul>
+							</div>
+							<div class="other-pay">
+								<ul>
+									<li>
+										<span>打包盒</span>
+										<span>￥2</span>
+									</li>
+									<li>
+										<span>配送费</span>
+										<span>￥2</span>
+									</li>
+									<li>
+										<span><i class="iconfont icon-jian-filling"></i>满25减10</span>
+										<span>￥22.00</span>
+									</li>
+									<li>
+										<span><i class="iconfont icon-hongbao"></i>红包</span>
+										<span>￥2</span>
+									</li>
+									
+								</ul>
+							</div>
+							<div class="other-info">
+								<div class="price">总计：￥44.00</div>
+								<div class="remark">
+									<span>
+										备注：
+									</span>
+									<span>
+										少放辣，不要葱，香，菜
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="yichangdingdan"class="tab-pane">
+				</div>
+			</div>
+		</div>
+		<!--弹框-->
+		
+	</body>
+	<script src="javascript/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<meta name="format-detection" content="telephone=no">
+		<meta content="email=no" name="format-detection">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta http-equiv="Cache-Control" content="max-age=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>会员收款</title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/main.built.css">
+		<script src="javascript/jquery-2.1.1.min.js"></script>
+		<script src="javascript/jquery.touchSwipe.min.js"></script>
+		<script src="javascript/payType.js"></script>
+		<!--<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>-->
+		<script>
+			! function(e) {
+				function t(a) {
+					if(i[a]) return i[a].exports;
+					var n = i[a] = {
+						exports: {},
+						id: a,
+						loaded: !1
+					};
+					return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+				}
+				var i = {};
+				return t.m = e, t.c = i, t.p = "", t(0)
+			}([function(e, t) {
+				"use strict";
+				Object.defineProperty(t, "__esModule", {
+					value: !0
+				});
+				var i = window;
+				t["default"] = i.flex = function(normal, e, t) {
+					var a = e || 100,
+						n = t || 1,
+						r = i.document,
+						o = navigator.userAgent,
+						d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+						l = o.match(/U3\/((\d+|\.){5,})/i),
+						c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+						p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+						s = i.devicePixelRatio || 1;
+					p || d && d[1] > 534 || c || (s = 1);
+					var u = normal ? 1 : 1 / s,
+						m = r.querySelector('meta[name="viewport"]');
+					m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m.setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" + u + ",minimum-scale=" + u), r.documentElement.style.fontSize = normal ? "50px" : a *0.4* s * n + "px"
+				}, e.exports = t["default"]
+			}]);
+			flex(false, 100, 1);
+		</script>
+	</head>
+
+	<body>
+		<div class="gc-container pt-container">
+			<div class="pt-box pb priority">
+				<div class="top-header">
+					<div class="back-box">
+						<a href="gathering.html"></a>
+					</div>
+					<div class="tit">会员收款</div>
+				</div>
+				<div id="pt_wrapper" class="pt m-scroll-wrap">
+					<main>
+						<div class="vip-wrapper">
+							<div class="vip-info">
+								<div class="photo">
+									<img src="images/user-photo.jpg" alt="" />
+								</div>
+								<div class="vip-detail">
+									<p class="name">
+										<span>苏苏</span>
+										<span class="vip-txt">VIP</span>
+									</p>
+									<p>
+										<span>手机号：</span>
+										<spa>15607249779</spa>
+									</p>
+									<p>
+										<span>
+										<span>积分：</span>
+										<span>1200</span>
+										</span>
+										<sapn class="balance">
+											<span>余额：</span>
+											<span>1000.00</span>
+										</sapn>
+									</p>
+								</div>
+								<i class="close"></i>
+							</div>
+						</div>
+						<div class="sum-wrapper">
+							<div class="figure">
+								<span id="">
+									还需收款
+								</span>
+								<span>
+									<em>￥</em>
+									<em>50.00</em>
+								</span>
+							</div>
+							<div class="sum-toggle">
+								<span>收起明细</span>
+								<i class="fa fa-angle-up"></i>
+							</div>
+							<div class="sum-detail">
+								<div>
+									<p class="name">
+										<span id="">应收</span>
+										<span>
+											<em>￥</em>
+											<em>3.00</em>
+										</span>
+									</p>
+									<p class="item">
+										<span id="">
+										消费金额
+									</span>
+										<span>
+											<em>￥</em>
+											<em>3.00</em>
+										</span>
+									</p>
+								</div>
+								<div>
+									<p class="name">
+										<span id="">
+											收款详情
+										</span>
+									</p>
+									<p class="item">
+										<span id="">
+											VIP卡
+										</span>
+										<span>
+											<em>￥</em>
+											<em>3.00</em>
+											<i class="close-sum-item"></i>
+										</span>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="payType-wrapper">
+							<span>其它付款方式（选一项）</span>
+							<ul>
+								<li class="active">
+									<a href="">
+										<i class="wechat"></i>
+										<p>微信</p>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="alipay"></i>
+										<p>支付宝</p>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="cash"></i>
+										<p>现金</p>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<i class="bankCard"></i>
+										<p>银行卡</p>
+									</a>
+								</li>
+								<!--<li>
+									<a href="">
+										<i class="bankCard"></i>
+										<p>银行卡</p>
+									</a>
+								</li>-->
+								<li class="itemempty"></li>
+								<li class="itemempty"></li>
+							</ul>
+						</div>
+						<div class="btn-submit">
+							确定
+						</div>
+					</main>
+				</div>
+			</div>
+			<div class="settle-box pb">
+				<div class="top-header">
+					<div class="back-box">
+					</div>
+					<div class="tit">收款完成</div>
+				</div>
+				<div id="st_wrapper" class="st m-scroll-wrap">
+					<main>
+						<div class="st-info">
+							<div class="gathering-complete"></div>
+							<div>款已收清</div>
+							<ul class="st-list">
+								<li>
+									<span>应收</span>
+									<span>
+										<em>￥</em>
+										<em>100.00</em>
+									</span>
+								</li>
+								<li>
+									<span>实收</span>
+									<ul class="pay-type-item">
+										<li id="">
+											<span>现金</span>
+											<span>
+												<em>￥</em>
+												<em>100.00</em>
+											</span>
+										</li>
+										<li id="">
+											<span>储值卡</span>
+											<span>	
+												<em>￥</em>
+												<em>100.00</em>
+											</span>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="btn-wrapper">
+							<div class="btn active">返回首页</div>
+							<div class="btn">返回首页</div>
+						</div>
+					</main>
+				</div>
+			</div>
+			<div class="pop-bg"></div>
+			<div class="attention-box base-alert">
+				<div class="main-content">
+					<p>提示</p>
+					<p>确定要清空优惠吗？</p>
+				</div>
+				<div class="btn-wrapper">
+					<div class="btn btn-cancle">取消</div>
+					<div class="btn btn-confirm active">确认</div>
+				</div>
+			</div>
+	</body>
+
+</html>

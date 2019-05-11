@@ -1,0 +1,51 @@
+$(function() {
+	$('.close').click(function() {
+		$('.vip-wrapper').slideUp('slow');
+	})
+	$('.close-sum-item').click(function() {
+//		debugger;
+		_this = $(this);
+		$(".pop-bg").show();
+		$(".attention-box").show();
+		//		$(this).parent().parent().css("display", "none");
+		//		$(this).parent().parent().slideUp('slow');
+		closeAttentionBox(_this);
+	})
+	var closeAttentionBox = function(selector) {
+		$('.btn-confirm').click(function() {
+			$(".pop-bg").hide();
+			$(".attention-box").hide();
+			selector.parent().parent().hide();
+		})
+		$('.btn-cancle').click(function() {
+			$(".pop-bg").hide();
+			$(".attention-box").hide();
+		})
+	}
+
+	$('.sum-toggle').click(function() {
+		if($('.sum-detail').is(':hidden')) {
+			$('.sum-detail').slideDown('slow');
+			$(this).children('span').text('收起明细');
+			$(this).children('i').removeClass("fa-angle-down");
+			$(this).children('i').addClass("fa-angle-up");
+		} else {
+			$('.sum-detail').slideUp('slow');
+			$(this).children('span').text('展开明细');
+			$(this).children('i').removeClass("fa-angle-up");
+			$(this).children('i').addClass("fa-angle-down");
+		}
+	});
+	$('.btn-submit').click(function() {
+//		$(".pt-box").hide();
+//		$(".settle-box").show();
+		$(".pt-box").removeClass("priority");
+		$(".settle-box").addClass("priority");
+	});
+	$(".settle-box .back-box").click(function() {
+//		$(".pt-box").show();
+//		$(".settle-box").hide();
+		$(".pt-box").addClass("priority");
+		$(".settle-box").removeClass("priority");
+	});
+});

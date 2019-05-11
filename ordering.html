@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en" class="gn-noscroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.built.css">
+    <script src="javascript/jquery-2.1.1.min.js"></script>
+    <script src="javascript/jquery.touchSwipe.min.js"></script>
+    <script src="javascript/ordering.js"></script>
+    <script>
+        !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);r.documentElement.style.fontSize=a/2*n+"px"},e.exports=t["default"]}]);  flex(100, 1);
+    </script>
+    <script>
+        $(function(){
+            var bodyH = $(document).height();
+            $(".nav").css({"height":bodyH});
+
+            $("#nav").click(function(){
+                $(".nav").show();
+            })
+            $("#close").click(function(){
+                $(".nav").hide();
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="gc-container">
+
+    <div class="nav">
+        <div class="top-header">
+            <div class="t-part-left">
+                <span class="back-box" id="close"></span>
+                <span style="font-size: 30%; line-height: 1rem; color: #fff">导航</span>
+            </div>
+        </div>
+        <h1 class="title">库存</h1>
+        <ul class="invBox">
+            <li>
+                <a><img src="images/nav-icon01.png" />订货</a>
+            </li>
+            <li>
+                <a><img src="images/nav-icon02.png" />收货</a>
+            </li>
+            <li>
+                <a><img src="images/nav-icon03.png" />盘点</a>
+            </li>
+            <li>&nbsp;</li>
+        </ul>
+        <div class="title">我的订单<a> 查看完结订单</a></div>
+        <ul class="invBox">
+            <li>
+                <a><img src="images/nav-icon04.png" />做废订单</a>
+            </li>
+            <li>
+                <a><img src="images/nav-icon05.png" />修改订单</a>
+            </li>
+            <li>
+                <a><img src="images/nav-icon06.png" />调整完结单</a>
+            </li>
+            <li>
+                <a><img src="images/nav-icon07.png" />分单</a>
+            </li>
+        </ul>
+        <div class="title">运营</div>
+        <ul class="navBox">
+            <li><a>日结</a></li>
+            <li><a>更新</a></li>
+        </ul>
+        <div class="title">报表</div>
+        <ul class="navBox">
+            <li><a>营业员交班表</a></li>
+        </ul>
+    </div>
+
+    <div class="index-box priority">
+        <div  class="order-box top-fixed">
+            <div class="back-box"></div>
+            <ul class="t-part-right">
+                <li>
+                    <div class="sel-tab-box">
+                        <span class="icon-tab"></span>
+                        <span class="tab-num">A3</span>
+                    </div>
+                    <div class="num-diners-box">
+                        <span class="icon-num"></span>
+                        <span class="num-diners">4</span>
+                    </div>
+                    <div class="more-box">
+                        <ul class="more-detail-list">
+                            <li>会员登录</li>
+                            <li id="nav">导航</li>
+                            <li>帮助</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <div id="menu_wrapper" class="scroll-wrap">
+            <main class="menu-content">
+                <div class="menu-navbar">
+                    <ul id="menu_nav">
+                        <li class="nav-item active" data-for="#dish_name_1">
+                            披萨
+                        </li>
+                        <li class="nav-item" data-for="#dish_name_2">
+                            套餐
+                        </li>
+                        <li class="nav-item" data-for="#dish_name_3">
+                            午餐
+                        </li>
+                        <li class="nav-item" data-for="#dish_name_4">
+                            三明治
+                        </li>
+                        <li class="nav-item" data-for="#dish_name_5">
+                            饮料加水
+                        </li>
+                        <li class="nav-item" data-for="#dish_name_6">
+                            面包
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu-sub-nav" id="sub_menu_nav" >
+                    <div class="search-wrap">
+                        <div class="scan-btn"></div>
+                        <div id="search_view" class="header-search-view">
+                            <div id="search_placeholder">
+                                <span >搜索</span>
+                            </div>
+                        </div>
+                        <form id="search_form" method="get" class="header-searchform-wrapper">
+                            <div class="s-form-search search-form">
+                                <input id="searchform_ipt" class="searchform-ipt" type="text" placeholder="...">
+                                <button>
+                                    <span></span>
+                                </button>
+                            </div>
+                            <div class="form-btn">
+                                <input type="submit" name="search" class="icons-search">
+                            </div>
+                            <div id="del_search" class="del-search">
+                            </div>
+                        </form>
+                    </div>
+                    <dl class="menu-sub-list">
+                        <dt class="dish-name" id="dish_name_1">披萨</dt>
+                        <dd class="sub-item-container current-item">
+                            <div class="sub-detail-container">
+                                <ul class="menuitem-detail-list">
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">大红披萨肉多多</span>
+                                        <span class="mark-cdm"></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">1</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">大红披萨肉多多</span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">1</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">大红披萨肉多多</span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">1</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">芝士榴莲混搭双重口味超满足披萨</span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red active">1</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">超级至尊比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">1</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">奥尔良烤鸡比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">3</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">榴莲忘返比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">岩烧牛肉比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </dd>
+                        <dt class="dish-name" id="dish_name_2">套餐</dt>
+                        <dd class="sub-item-container current-item">
+                            <div class="sub-detail-container">
+                                <ul class="menuitem-detail-list">
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">大红披萨肉多多</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">芝士榴莲混搭双重口味超满足披萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red active">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">超级至尊比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">奥尔良烤鸡比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">榴莲忘返比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">岩烧牛肉比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </dd>
+                        <dt class="dish-name" id="dish_name_3">午餐</dt>
+                        <dd class="sub-item-container current-item">
+                            <div class="sub-detail-container">
+                                <ul class="menuitem-detail-list">
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">大红披萨肉多多</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">超级至尊比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">奥尔良烤鸡比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">榴莲忘返比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">岩烧牛肉比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                        <dt class="dish-name" id="dish_name_4">三明治</dt>
+                        <dd class="sub-item-container current-item">
+                            <div class="sub-detail-container">
+                                <ul class="menuitem-detail-list">
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">大红披萨肉多多</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">芝士榴莲混搭双重口味超满足披萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red active">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">奥尔良烤鸡比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">岩烧牛肉比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </dd>
+                        <dt class="dish-name" id="dish_name_5">饮料加水</dt>
+                        <dd class="sub-item-container current-item">
+                            <div class="sub-detail-container">
+                                <ul class="menuitem-detail-list">
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">大红披萨肉多多</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">芝士榴莲混搭双重口味超满足披萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red active">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">超级至尊比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">奥尔良烤鸡比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">榴莲忘返比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">岩烧牛肉比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </dd>
+                        <dt class="dish-name" id="dish_name_6">面包</dt>
+                        <dd class="sub-item-container current-item">
+                            <div class="sub-detail-container">
+                                <ul class="menuitem-detail-list">
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">大红披萨肉多多</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">芝士榴莲混搭双重口味超满足披萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red active">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">超级至尊比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">奥尔良烤鸡比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">榴莲忘返比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+                                    <li class="mt-d-item">
+                                        <span class="sub-dish-name">岩烧牛肉比萨</span>
+                                        <span class="mark-cdm "></span>
+                                        <span class="mt-d-price">￥130.00</span>
+                                        <div class="have-more-box">
+                                            <span class="add"></span>
+                                            <span class="hm-several purplish-red">2</span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </main>
+        </div>
+        <div class="bottom-fixed">
+            <footer class="checkout-container">
+                <div class="co-part-one">
+                    <div class="row">
+                        <div class="member-box">
+                            <span>会员:</span>
+                            <span>1233435345</span>
+                        </div>
+                        <div class="delete-box">
+                            <span>清空</span>
+                        </div>
+                    </div>
+                    <div class="sel-food-container">
+                        <dl>
+                            <dd class="sel-f-item">
+                               <!-- <div class="switch-flag">
+                                    <span class="flag-item flag-E current-view"></span>
+                                    <span class="flag-item flag-T"></span>
+                                    <span class="flag-item flag-D"></span>
+                                </div>-->
+                                <div class="switch-flag">
+                                    <span class="f-item flag-1">堂</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="edit-quantity">
+                                        <p class="btn-minus">
+                                            <a class="btn minus"></a>
+                                        </p>
+                                        <p class="btn-ipt">
+                                            <input type="tel" min="1" max="100" value="1">
+                                        </p>
+                                        <p class="btn-plus">
+                                            <a class="btn plus">
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                            <dd class="sel-f-item">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-2">打</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">羊肉小番茄美味汉堡</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥48.00</div>
+                                    <div class="edit-quantity">
+                                        <p class="btn-minus">
+                                            <a class="btn minus"></a>
+                                        </p>
+                                        <p class="btn-ipt">
+                                            <input type="tel" min="1" max="100" value="1">
+                                        </p>
+                                        <p class="btn-plus">
+                                            <a class="btn plus">
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                            <dd class="sel-f-item">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-3">外</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="edit-quantity">
+                                        <p class="btn-minus">
+                                            <a class="btn minus"></a>
+                                        </p>
+                                        <p class="btn-ipt">
+                                            <input type="tel" min="1" max="100" value="1">
+                                        </p>
+                                        <p class="btn-plus">
+                                            <a class="btn plus">
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                            <dd class="sel-f-item">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-4">损</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="edit-quantity">
+                                        <p class="btn-minus">
+                                            <a class="btn minus"></a>
+                                        </p>
+                                        <p class="btn-ipt">
+                                            <input type="tel" min="0" max="100" value="1">
+                                        </p>
+                                        <p class="btn-plus">
+                                            <a class="btn plus">
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                            <dd class="sel-f-item">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-5">员</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="edit-quantity">
+                                        <p class="btn-minus">
+                                            <a class="btn minus"></a>
+                                        </p>
+                                        <p class="btn-ipt">
+                                            <input type="tel" min="0" max="100" value="1">
+                                        </p>
+                                        <p class="btn-plus">
+                                            <a class="btn plus">
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                            <dd class="sel-f-item">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-6">促</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="edit-quantity">
+                                        <p class="btn-minus">
+                                            <a class="btn minus"></a>
+                                        </p>
+                                        <p class="btn-ipt">
+                                            <input type="tel" min="0" max="100" value="1">
+                                        </p>
+                                        <p class="btn-plus">
+                                            <a class="btn plus">
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                            <dd class="sel-f-item">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-7">品</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="edit-quantity">
+                                        <p class="btn-minus">
+                                            <a class="btn minus"></a>
+                                        </p>
+                                        <p class="btn-ipt">
+                                            <input type="tel" min="0" max="100" value="1">
+                                        </p>
+                                        <p class="btn-plus">
+                                            <a class="btn plus">
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                            <dd class="sel-f-item">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-8">L</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="edit-quantity">
+                                        <p class="btn-minus">
+                                            <a class="btn minus"></a>
+                                        </p>
+                                        <p class="btn-ipt">
+                                            <input type="tel" min="0" max="100" value="1">
+                                        </p>
+                                        <p class="btn-plus">
+                                            <a class="btn plus">
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                            <dd class="sel-f-item">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-9">会</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="edit-quantity">
+                                        <p class="btn-minus">
+                                            <a class="btn minus"></a>
+                                        </p>
+                                        <p class="btn-ipt">
+                                            <input type="tel" min="0" max="100" value="1">
+                                        </p>
+                                        <p class="btn-plus">
+                                            <a class="btn plus">
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                            <dd class="sel-f-item">
+                                <div class="switch-flag">
+                                    <span class="f-item flag-10">内</span>
+                                </div>
+                                <div class="food-item item-detail">
+                                    <div class="f-name-box">
+                                        <span class="f-name">牛肉汉堡包</span>
+                                        <span class="mark-cdm"></span>
+                                    </div>
+                                    <div class="f-price">￥33.00</div>
+                                    <div class="edit-quantity">
+                                        <p class="btn-minus">
+                                            <a class="btn minus"></a>
+                                        </p>
+                                        <p class="btn-ipt">
+                                            <input type="tel" min="1" max="100" value="1">
+                                        </p>
+                                        <p class="btn-plus">
+                                            <a class="btn plus">
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="co-part-second carbon-black">
+                    <div class="cart-box brilliant-yellow">
+                        <span class="badge purplish-red">7</span>
+                    </div>
+                    <div class="ft-cc-item double-item">
+                        <div class="cc-sub-item tp-box">
+                            总价<span class="total-price">230.00</span>
+                        </div>
+                        <div class="cc-sub-item tr-box">
+                            服务费<span class="ft-tip">30.00</span>
+                            税<span class="ft-tax">10.00</span>
+                        </div>
+                    </div>
+                    <div id="btn_submit" class="ele-item ft-cc-item btn-box brilliant-yellow">
+                        提交
+                    </div>
+                </div>
+                <div class="co-part-third carbon-black">
+                    <ul>
+                        <li class="btn-item dark-brown">打印</li>
+                        <li class="btn-item dark-brown go-pm">
+                            <a href="payment.html">付款</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="ing-list-box">
+        <div class="top-header">
+            <div class="t-part-left">
+                <span class="back-box"></span>
+                <span>菜品套餐名称</span>
+                <span class="count-total-p">￥55.00</span>
+                <span class="item-p">+12.00</span>
+            </div>
+        </div>
+        <div id="ing_list_wrapper" class="ing-list m-scroll-wrap">
+            <main>
+                <dl class="ingredient-lists-cn">
+                    <dt>
+                        <span class="ing-title">酱料分组 (select 1<10)</span>
+                    </dt>
+                    <dd class="ing-item-box light-gray">
+                        <div class="ing-item-container">
+                            <ul class="ing-detail-list ing-base">
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item active">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item have-sub-ing">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                            </ul>
+                            <dl class="ing-sub-list-cn" >
+                                <dt class="ing-sub-title">
+                                    <span class="ing-sub-logo"></span>
+                                    <span class="ing-title">子分组 (select 1<10)</span>
+                                    <span class="ing-sub-hr"></span>
+                                </dt>
+                                <dd class="ing-item-box light-gray">
+                                    <div class="ing-item-container">
+                                        <ul class="ing-detail-list ing-sub-base">
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </dd>
+                    <dt>
+                        <span class="ing-title">酱料分组 (select 1<10)</span>
+                    </dt>
+                    <dd class="ing-item-box light-gray">
+                        <div class="ing-item-container">
+                            <ul class="ing-detail-list ing-base">
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item have-sub-ing  active">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item have-sub-ing">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                            </ul>
+                            <dl class="ing-sub-list-cn priority">
+                                <dt class="ing-sub-title">
+                                    <span class="ing-sub-logo"></span>
+                                    <span class="ing-title">子分组 (select 1<10)</span>
+                                    <span class="ing-sub-hr"></span>
+                                </dt>
+                                <dd class="ing-item-box light-gray">
+                                    <div class="ing-item-container">
+                                        <ul class="ing-detail-list ing-sub-base">
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </dd>
+                    <dt>
+                        <span class="ing-title">酱料分组 (select 1<10)</span>
+                    </dt>
+                    <dd class="ing-item-box light-gray">
+                        <div class="ing-item-container">
+                            <ul class="ing-detail-list ing-base">
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name have-sub-ing">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item  active">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item have-sub-ing">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                            </ul>
+                            <dl class="ing-sub-list-cn">
+                                <dt class="ing-sub-title">
+                                    <span class="ing-sub-logo"></span>
+                                    <span class="ing-title">子分组 (select 1<10)</span>
+                                    <span class="ing-sub-hr"></span>
+                                </dt>
+                                <dd class="ing-item-box light-gray">
+                                    <div class="ing-item-container">
+                                        <ul class="ing-detail-list ing-sub-base">
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </dd>
+                    <dt>
+                        <span class="ing-title">酱料分组 (select 1<10)</span>
+                    </dt>
+                    <dd class="ing-item-box light-gray">
+                        <div class="ing-item-container">
+                            <ul class="ing-detail-list ing-base">
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item active">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item have-sub-ing">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                                <li class="ing-d-item">
+                                    <span class="ing-dish-name">我是酱料分组</span>
+                                    <span class="hm-several purplish-red">1</span>
+                                    <span class="ing-dt-delete"></span>
+                                </li>
+                            </ul>
+                            <dl class="ing-sub-list-cn">
+                                <dt class="ing-sub-title">
+                                    <span class="ing-sub-logo"></span>
+                                    <span class="ing-title">子分组 (select 1<10)</span>
+                                    <span class="ing-sub-hr"></span>
+                                </dt>
+                                <dd class="ing-item-box light-gray">
+                                    <div class="ing-item-container">
+                                        <ul class="ing-detail-list ing-sub-base">
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                            <li class="ing-d-item">
+                                                <span class="ing-dish-name">我是子酱料分组</span>
+                                                <span class="hm-several purplish-red">1</span>
+                                                <span class="ing-dt-delete"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </dd>
+                </dl>
+            </main>
+        </div>
+        <div class="btm-fixed carbon-black">
+            <footer class="btn-submit">
+                确认
+            </footer>
+        </div>
+    </div>
+    <div class="pop-bg"></div>
+    <div class="setting-diners-box base-alert">
+        <div class="header-title">
+            <div class="pm-a-part-left">
+                <div class="alert-icon"></div>
+                <div class="alert-title">原人数:
+                    <span>4</span>
+                </div>
+            </div>
+            <div class="pm-a-part-right close"></div>
+        </div>
+        <div class="main-content">
+            <div class="st-mdf-txt">用餐人数 </div>
+            <div class="modify-cash">
+                <div class="mdf-c-label" contenteditable="true"></div>
+            </div>
+        </div>
+        <div class="ft-bottom carbon-black">
+            <div class="a-btn-cancel">取消</div>
+            <div class="a-btn-submit">确定</div>
+        </div>
+    </div>
+    <div class="setting-tab-box base-alert">
+        <div class="header-title">
+            <div class="pm-a-part-left">
+                <div class="alert-icon"></div>
+                <div class="alert-title">原桌号:
+                    <span>A1</span>
+                </div>
+            </div>
+            <div class="pm-a-part-right close"></div>
+        </div>
+        <div class="main-content">
+            <ul class="tab-list">
+                <li class="tab-item ">
+                    <span class="status sta-overtime">A1</span>
+                    <span class="sta-txt">TOTAL 2</span>
+                </li>
+                <li class="tab-item ">
+                    <span class="status sta-clear">A2</span>
+                    <span class="sta-txt">CLEAN</span>
+                </li>
+                <li class="tab-item ">
+                    <span class="status sta-using">A3</span>
+                </li>
+                <li class="tab-item ">A4</li>
+                <li class="tab-item active">A5</li>
+                <li class="tab-item ">A6</li>
+                <li class="tab-item ">A7</li>
+                <li class="tab-item ">A8</li>
+                <li class="tab-item ">A1</li>
+                <li class="tab-item ">A2</li>
+                <li class="tab-item ">A3</li>
+                <li class="tab-item ">A4</li>
+                <li class="tab-item ">A5</li>
+                <li class="tab-item ">A6</li>
+                <li class="tab-item ">A7</li>
+                <li class="tab-item ">A8</li>
+            </ul>
+        </div>
+        <div class="ft-bottom carbon-black">
+            <div class="a-btn-cancel">取消</div>
+            <div class="a-btn-submit">确定</div>
+        </div>
+    </div>
+    <div class="regular-dinner-box base-alert">
+        <div class="header-title">
+            <div class="pm-a-part-left">
+                <div class="alert-icon"></div>
+                <div class="alert-title">可组套擦</div>
+            </div>
+            <div class="pm-a-part-right close"></div>
+        </div>
+        <div class="main-content">
+            <ul class="rg-dinner-list">
+                <li class="rg-dinner-item light-gray">
+                    <div class="rg-dinner-name">牛肉汉堡+中杯可可</div>
+                    <div class="mark-cdm"></div>
+                    <div class="rg-price-box">
+                        <span class="original-txt">原价：</span>
+                        <span class="original-p">87.00</span>
+                        <span class="discount-p">2.00</span>
+                        <span class="discount-logo purplish-red">省</span>
+                    </div>
+                </li>
+                <li class="rg-dinner-item light-gray">
+                    <div class="rg-dinner-name">牛肉汉堡+中杯可可+土豆泥欢乐套餐</div>
+                    <div class="mark-cdm"></div>
+                    <div class="rg-price-box">
+                        <span class="original-txt">原价：</span>
+                        <span class="original-p">107.00</span>
+                        <span class="discount-p">11.00</span>
+                        <span class="discount-logo purplish-red">省</span>
+                    </div>
+                </li>
+                <li class="rg-dinner-item light-gray">
+                    <div class="rg-dinner-name">牛肉汉堡+中杯可可+土豆泥欢乐套餐+草莓大福+海洋芝士</div>
+                    <div class="mark-cdm"></div>
+                    <div class="rg-price-box">
+                        <span class="original-txt">原价：</span>
+                        <span class="original-p">147.00</span>
+                        <span class="discount-p">27.00</span>
+                        <span class="discount-logo purplish-red">省</span>
+                    </div>
+                </li>
+                <li class="rg-dinner-item light-gray">
+                    <div class="rg-dinner-name">牛肉汉堡+中杯可可+土豆泥欢乐套餐+草莓大福+你想要的冰爽酷饮</div>
+                    <div class="mark-cdm"></div>
+                    <div class="rg-price-box">
+                        <span class="original-txt">原价：</span>
+                        <span class="original-p">157.00</span>
+                        <span class="discount-p">32.00</span>
+                        <span class="discount-logo purplish-red">省</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="ft-bottom carbon-black">
+            <div class="a-btn-cancel">忽略</div>
+            <div class="a-btn-submit">组套餐</div>
+        </div>
+    </div>
+</div>
+<!--弹框-->
+<div class="attention-box attention-md-box cook-type-box base-alert">
+	<div class="attention-title">做法</div>
+	<div class="main-content cook-type-container">
+			<span class="type-btn active">红烧</span>
+			<span class="type-btn">红烧</span>
+			<span class="type-btn">红烧</span>
+			<span class="type-btn itemempty"></span>
+			<span class="type-btn itemempty"></span>
+	</div>
+	<div class="btn-wrapper">
+		<div class="btn btn-cancle">取消</div>
+		<div class="btn btn-confirm active">确认</div>
+	</div>
+</div>
+</body>
+<script>
+    /*offset 绝对距离 子容器相对于父容器的绝对距离（不会改变）
+    * scrollTop :向下滚动的距离
+    * */
+    var clock = 0,
+            sub_menu_nav =document.getElementById("sub_menu_nav"),
+            search_wrap =document.querySelector(".search-wrap");
+
+
+    //缓冲，点击一级菜单的同时相应的二级置顶
+    document.getElementById("menu_nav").addEventListener('click',function(event){
+        var e = event|| window.event,
+                target = e.target || e.srcElement;
+        if(target.tagName == 'LI'){
+            var cnt=10,
+                    end = parseFloat(document.querySelector(event.target.dataset.for).offsetTop) + parseFloat(search_wrap.clientHeight),
+                    step = parseFloat((end - sub_menu_nav.scrollTop)) / cnt ;
+            clearInterval(clock);
+            clock = setInterval(function(){
+                sub_menu_nav.scrollTop += step;
+                cnt--;
+                if(cnt < 1){
+                    clearInterval(clock);
+                    sub_menu_nav.scrollTop = end ;
+                }
+            },10)
+        }
+    })
+</script>
+</html>
